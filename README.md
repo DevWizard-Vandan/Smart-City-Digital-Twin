@@ -114,15 +114,28 @@ Frontend runs at: `http://localhost:3000`
 
 ### API Keys (Optional but Recommended)
 
-Edit `backend/config.py`:
+Set environment variables before running the backend:
 
-```python
-# For AI-powered insights
-GEMINI_API_KEY = 'your-gemini-api-key'  # Get from https://aistudio.google.com/
-
-# For real-time AQI (already configured, but you can use your own)
-OPENWEATHER_API_KEY = 'your-openweathermap-key'  # Get from https://openweathermap.org/api
+**Windows (PowerShell):**
+```powershell
+$env:GEMINI_API_KEY = "your-gemini-api-key"
+$env:OPENWEATHER_API_KEY = "your-openweathermap-api-key"
+python app.py
 ```
+
+**Linux/Mac:**
+```bash
+export GEMINI_API_KEY="your-gemini-api-key"
+export OPENWEATHER_API_KEY="your-openweathermap-api-key"
+python app.py
+```
+
+Or copy `.env.example` to `.env` and fill in your keys.
+
+| API | Get Free Key |
+|-----|--------------|
+| Gemini | https://aistudio.google.com/ |
+| OpenWeatherMap | https://openweathermap.org/api |
 
 > **Note:** The app works without API keys - AI features will show placeholders and AQI uses simulated data.
 
